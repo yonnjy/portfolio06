@@ -8,6 +8,9 @@ $(function () {
                 $(this).removeClass('on');
             }
         });
+
+        let hsct = $(window).scrollTop();
+        hsct > 0 ? $('.header').addClass('on') : $('.header').removeClass('on');
     });
 
     $('.gnb>ul>li>a').on('click', function (e) {
@@ -20,6 +23,7 @@ $(function () {
 
     $('.btn_ham').on('click', function () {
         $('.header .gnb').toggleClass('on');
+        $('.header .login').toggleClass('on');
     });
 
     $(window).on('resize', function () {
@@ -64,4 +68,12 @@ $(function () {
             $('.btn_side').fadeOut(50);
         }
     });
+
+    $('.chat_bot').on('click', function(){
+        $(this).parent().toggleClass('on');
+    });
+
+    $('.btn_side .chat_wrap>span').on('click', function(){
+        $('.btn_side').removeClass('on');
+    })
 });
