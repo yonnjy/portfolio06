@@ -1074,6 +1074,7 @@
     right: 15px;
     z-index: 1000;
     display: none;
+    cursor: pointer;
 }
 
 .btn_ham i {
