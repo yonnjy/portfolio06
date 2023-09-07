@@ -1,0 +1,262 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    z-index: 999;
+
+    .header_t {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #fafafa;
+        padding: 27px 0 17px 0;
+        background: #fff;
+    }
+
+    h1 {
+        width: 150px;
+        z-index: 1000;
+    }
+
+    .header_b {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        color: #555;
+        transition: 0.3s;
+
+        .inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gnb {
+            &>ul {
+                display: flex;
+                gap: 70px;
+
+                &>li {
+                    position: relative;
+
+                    &>a {
+                        display: block;
+                        font-weight: 500;
+                        line-height: 56px;
+                        color: #555;
+                    }
+
+                    .sub {
+                        position: absolute;
+                        top: 48px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        text-align: center;
+
+                        &>li {
+                            border: 1px solid #eee;
+                            background: #fff;
+                            visibility: hidden;
+                            height: 0;
+
+                            &>a {
+                                display: block;
+                                line-height: 40px;
+                                font-size: 14px;
+                                width: 170px;
+                            }
+                        }
+
+                        &>li:hover {
+                            background: #eee;
+                        }
+                    }
+                }
+
+                &li:hover::before {
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    right: -10px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: #132e26;
+                }
+
+                &>li:hover .sub>li {
+                    visibility: visible;
+                    height: 100%;
+                }
+            }
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: #555;
+
+            &>li {
+                position: relative;
+
+                &>a {
+                    font-size: 14px;
+                }
+            }
+
+            &>li~li::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -12px;
+                transform: translate(0, -50%);
+                width: 1px;
+                height: 14px;
+                background: #eee;
+            }
+
+            &.language {
+                cursor: pointer;
+
+                &>i {
+                    font-size: 14px;
+                    padding: 0 0 0 2px;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .header {
+        height: 100px;
+
+        .header_t {
+            border-bottom: none;
+
+            .gnb {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                visibility: hidden;
+                opacity: 0;
+                background: #f9f9f9;
+                height: 100vh;
+                width: 100%;
+
+                padding: 0;
+                transition: 0.5s;
+
+                &>ul {
+                    flex-direction: column;
+                    gap: 0;
+                    padding: 140px 0 0 24px;
+
+                    &>li {
+                        position: relative;
+                        width: 90%;
+
+                        &>a {
+                            line-height: 40px;
+                            color: #555;
+                        }
+
+                        .sub {
+                            position: static;
+                            width: 100%;
+                            display: none;
+                            transition: none;
+                            top: 0;
+                            left: 0;
+                            transform: translate(0, 0);
+                            text-align: left;
+
+                            &>li {
+                                visibility: visible;
+                                height: 100%;
+                                width: 100%;
+                                border: none;
+
+                                &>a {
+                                    display: block;
+                                    line-height: 40px;
+                                    font-size: 14px;
+                                    width: 100%;
+                                    padding-left: 15px;
+                                    border-top: 1px solid #eee;
+                                    border-left: 1px solid #eee;
+                                    border-right: 1px solid #eee;
+                                }
+
+                                &:hover {
+                                    background: inherit;
+                                }
+                            }
+                        }
+
+                        &:hover::before {
+                            display: none;
+                        }
+
+                        &:hover .sub>li {
+                            visibility: visible;
+                            height: 100%;
+                        }
+                    }
+
+                    &>li~li {
+                        border-top: 1px solid #ddd;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 90px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #ddd;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 125px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #ddd;
+                }
+
+                &.on {
+                    visibility: visible;
+                    opacity: 1;
+                    left: 0;
+                }
+            }
+
+            .login {
+                visibility: hidden;
+                opacity: 0;
+
+                &.on {
+                    visibility: visible;
+                    opacity: 1;
+                    position: absolute;
+                    top: 100px;
+                    left: 24px;
+                    color: #555;
+                }
+            }
+        }
+
+        &.on .gnb>ul>li>a {
+            display: block;
+            font-weight: 500;
+            line-height: 56px;
+            color: #555;
+        }
+    }
+}

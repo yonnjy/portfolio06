@@ -1,0 +1,175 @@
+.sub_box {
+    padding: 40px 0 0 0;
+
+    .sub_vi {
+        position: relative;
+        height: 400px;
+        background: url(../../images/sub01_bg01.jpg)no-repeat center center/cover;
+
+        .tit {
+            @include position-center();
+            text-align: center;
+            color: #fff;
+
+            h2 {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 1.4;
+                margin: 0 0 8px 0;
+            }
+        }
+    }
+
+    .company {
+        .company_wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+
+            .left {
+                flex: 2;
+                h3 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin: 0 0 24px 0;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 30px;
+
+                    span {
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 24px;
+                            background: #dde6d7;
+                            z-index: -1;
+                        }
+                    }
+                }
+                
+            }
+
+            .right {
+                flex: 1;
+                text-align: center;
+
+                li {
+                    padding: 15px 30px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    background: #dde6d7;
+                }
+
+                li~li {
+                    margin-top: 10px;
+                }
+            }
+
+        }
+    }
+
+    .special {
+        ul {
+            li {
+                display: flex;
+                gap: 30px;
+                justify-content: space-between;
+
+                &>* {
+                    flex: 1;
+                }
+
+                .img_box {
+                    height: 300px;
+                    border-radius: 15px;
+                    overflow: hidden;
+                }
+
+                .txt_box {
+                    padding: 24px 0 0 0;
+
+                    strong {
+                        display: block;
+                        position: relative;
+                        font-weight: 700;
+                        font-size: 24px;
+                        margin: 0 0 44px 0;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -20px;
+                            left: 0;
+                            width: 100%;
+                            height: 1px;
+                            background: #eee;
+                        }
+
+                        span {
+                            display: inline-block;
+                            position: relative;
+                            font-size: 20px;
+                            margin: 0 20px 0 0;
+                            color: #fff;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: -5px;
+                                left: -9px;
+                                width: 30px;
+                                height: 30px;
+                                background: #444;
+                                border-radius: 50%;
+                                z-index: -1;
+                            }
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+                        color: #666;
+
+                        span {
+                            display: block;
+                            margin: 0 0 15px 0;
+                        }
+                    }
+                }
+            }
+
+            li~li {
+                margin: 30px 0 0 0;
+            }
+        }
+    }
+
+    .banner {
+        position: relative;
+        height: 480px;
+        background: url(../../images/sub01_bg02.jpg)no-repeat center center/cover;
+
+        .txt_box {
+            @include position-center();
+            text-align: center;
+            color: #fff;
+
+            strong {
+                display: block;
+                font-size: 18px;
+                margin: 0 0 12px 0;
+            }
+
+            h3 {
+                font-size: 40px;
+                font-weight: 700;
+            }
+        }
+    }
+}

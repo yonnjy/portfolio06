@@ -1,0 +1,267 @@
+.btn_ham {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    z-index: 1000;
+    display: none;
+    cursor: pointer;
+
+    i {
+        font-size: 24px;
+    }
+}
+
+.btn_side {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    .chat_bot {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        background: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-top: 12px;
+        cursor: pointer;
+
+        .img_box {
+            line-height: 55px;
+        }
+    }
+
+    .to_top {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        background: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-top: 12px;
+        cursor: pointer;
+
+        i {
+            display: block;
+            margin: 0 0 3px 0;
+            padding: 10px 0 0 0;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .chat_bot_con {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 140px;
+        right: -100%;
+        transition: 0.5s;
+
+        .chat_wrap {
+            width: 300px;
+            height: 530px;
+            background: #f9f9f9;
+            border-radius: 32px;
+            padding: 24px 15px 15px;
+            border: 3px solid #f5f5f5;
+
+            .chat_name {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 0 0 24px 9px;
+
+                .img_box {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 15px;
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        filter: brightness(150%);
+                    }
+                }
+
+                .txt_box {
+                    strong {
+                        display: block;
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin: 0 0 8px 0;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        color: #888;
+                    }
+                }
+            }
+
+            .chating {
+                display: flex;
+                gap: 15px;
+                width: 100%;
+                background: #fff;
+                border-radius: 15px;
+                padding: 15px;
+                border: 1px solid #eee;
+                margin: 0 0 15px 0;
+
+                .img_box {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .txt_box {
+                    strong {
+                        display: block;
+                        font-size: 16px;
+                        font-weight: 700;
+                        margin: 0 0 8px 0;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                        width: 177px;
+
+                        span {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .btn01 {
+                text-align: center;
+                margin: 0 0 15px 0;
+
+                strong {
+                    display: block;
+                    font-size: 14px;
+                    color: #888;
+                    margin: 0 0 8px 0;
+                }
+
+                .btn_box {
+                    a {
+                        display: block;
+                        padding: 10px 0;
+                        background: #132e26;
+                        border-radius: 10px;
+
+                        span {
+                            font-weight: 500;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .btn02 {
+                text-align: center;
+
+                strong {
+                    display: block;
+                    font-size: 14px;
+                    color: #888;
+                    margin: 0 0 8px 0;
+                }
+
+                .btn_box {
+                    a {
+                        display: inline-block;
+                        padding: 10px 24px;
+                        background: #132e26;
+                        border-radius: 10px;
+                        font-size: 14px;
+                        color: #fff;
+                    }
+                }
+            }
+
+            &>span {
+                position: absolute;
+                bottom: 15px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                background: #fff;
+                border: 1px solid #eee;
+                padding: 2px;
+                border-radius: 5px;
+                color: #132e26;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.on .chat_bot_con {
+        visibility: visible;
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@include mobile {
+    .btn_ham {
+        position: fixed;
+        display: block;
+    }
+
+    .btn_side {
+        position: fixed;
+        bottom: 70px;
+        right: 8px;
+    }
+
+    .btn_side .to_top {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+
+    .btn_side .to_top i {
+        display: block;
+        font-size: 12px;
+        margin: 0 0 0 0;
+        padding: 4px 0 0 0;
+    }
+
+    .btn_side .to_top span {
+        font-size: 12px;
+    }
+
+    .btn_side .chat_bot {
+        width: 40px;
+        height: 40px;
+    }
+    .btn_side .chat_bot .img_box {
+        line-height: 35px;
+    }
+    
+    .btn_side .chat_bot .img_box img {
+        width: 30px;
+    }
+    
+    .btn_side .chat_bot_con {
+        bottom: -60px;
+    }
+    
+    .btn_side.on .chat_bot_con {
+        right: 50px;
+    }
+}

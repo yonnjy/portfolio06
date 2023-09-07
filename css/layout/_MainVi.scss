@@ -1,0 +1,158 @@
+.main_vi {
+    position: relative;
+    margin: -56px 0 0 0;
+
+    .main_slide {
+
+        .itm {
+            position: relative;
+            height: 700px;
+
+            .slogan {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(0, -50%);
+                margin: 0 0 0 -585px;
+                color: #fff;
+
+                strong {
+                    display: block;
+                    margin: 0 0 12px 0;
+                    font-weight: 500;
+                    color: #ddd;
+                }
+
+                h2 {
+                    font-size: 40px;
+                    font-weight: 700;
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    color: #ddd;
+                    width: 370px;
+                    margin: 0 0 40px 0;
+                }
+
+                a {
+                    display: block;
+                    width: 170px;
+                    text-align: center;
+                    line-height: 40px;
+                    border: 1px solid #fff;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .itm01 {
+            background: url(../images/main_vi01.jpg) no-repeat center center/cover;
+        }
+
+        .itm02 {
+            background: url(../images/main_vi02.jpg) no-repeat center center/cover;
+        }
+
+        .itm03 {
+            background: url(../images/main_vi03.jpg) no-repeat center center/cover;
+        }
+
+        .itm04 {
+            background: url(../images/main_vi04.jpg) no-repeat center center/cover;
+        }
+    }
+
+    .arrows {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        color: #fff;
+        margin: 0 0 0 -585px;
+        max-width: 120px;
+        width: 100%;
+
+        &>* {
+            position: absolute;
+        }
+
+        i {
+            border: 1px solid #eee;
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+    }
+}
+
+@include mobile {
+    .main_vi .main_slide .itm {
+        position: relative;
+        height: calc(100vh - 50px);
+    }
+
+    .main_vi .main_slide .itm01 {
+        background: url(../images/main_vi01.jpg) no-repeat right center/cover;
+    }
+
+    .main_vi .main_slide .itm04 {
+        background: url(../images/main_vi04.jpg) no-repeat 55% center/cover;
+    }
+
+    .main_vi .slogan {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        margin: 0 0 0 0;
+        padding: 0 56px;
+        width: 100%;
+        color: #fff;
+    }
+
+    .main_vi .slogan p {
+        width: auto;
+    }
+
+    .main_vi a {
+        display: block;
+        width: 170px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+    }
+
+    .main_vi .arrows {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        margin: 0 0 0 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .main_vi .arrows i {
+        padding: 8px;
+        margin: 0 8px;
+        border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+    .main_vi .arrows .left {
+        position: absolute;
+        left: 0;
+    }
+
+    .main_vi .arrows .right {
+        position: absolute;
+        right: 0;
+    }
+}

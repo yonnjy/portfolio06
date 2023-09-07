@@ -1,0 +1,201 @@
+.footer {
+    padding: 50px 0;
+    background: #132e26;
+
+    address {
+        .inner {
+            .footer_t {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                align-items: center;
+                padding: 0 0 20px 0;
+                margin: 0 0 20px 0;
+                border-bottom: 1px solid rgba(48, 94, 80, 0.3);
+
+                .logo {
+                    a {
+                        img {
+                            width: 150px;
+                            filter: invert(100%);
+                        }
+                    }
+                }
+
+                .info_nav {
+                    display: flex;
+                    gap: 40px;
+
+                    li {
+                        position: relative;
+                    }
+
+                    li~li::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: -20px;
+                        transform: translate(0, -50%);
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 50%;
+                        background: rgba(48, 94, 80, 0.3);
+                    }
+                }
+
+                .sns {
+                    display: flex;
+                    gap: 16px;
+                    padding: 0 0 0 60px;
+                    width: 150px;
+
+                    i {
+                        font-size: 20px;
+                        transition: 0.5s;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .footer_b {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                line-height: 16px;
+
+                .time {
+                    width: 230px;
+                }
+
+                .add {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 20px;
+
+                    .co {
+                        padding: 23px 0 0 0;
+                    }
+                }
+
+                .tel {
+                    width: 230px;
+                    text-align: right;
+
+                    span {
+                        display: block;
+                        font-size: 14px;
+                        margin: 0 0 20px 0;
+                    }
+
+                    strong {
+                        display: block;
+                        font-size: 32px;
+                        font-weight: 700;
+                        color: #fff;
+                        margin: 0 0 20px 0;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+                }
+
+                .st {
+                    font-size: 20px;
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+    }
+
+    .st {
+        color: #fff;
+    }
+}
+
+@include mobile {
+    .footer {
+        padding: 50px 0 0 0;
+    }
+
+    .footer .footer_t {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        padding: 0 0 20px 0;
+        margin: 0 0 0 0;
+        border-bottom: 1px solid rgba(48, 94, 80, 0);
+    }
+
+    .footer .footer_t .logo {
+        display: none;
+    }
+
+    .footer .footer_t .info_nav .st {
+        font-size: 14px;
+    }
+
+    .footer .footer_t .sns {
+        display: flex;
+        gap: 24px;
+        padding: 0 0 0 0;
+        width: auto;
+    }
+
+    .footer .footer_t .sns i {
+        font-size: 18px;
+    }
+
+    .footer .footer_t .sns i:hover {
+        color: inherit;
+    }
+
+    .footer .footer_b {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer .footer_b>* {
+        padding: 16px 0;
+        border-top: 1px solid rgba(48, 94, 80, 0.3);
+    }
+
+    .footer .footer_b .time {
+        text-align: center;
+        width: auto;
+    }
+
+    .footer .footer_b .time .st {
+        font-size: 18px;
+    }
+
+    .footer .footer_b .add {
+        text-align: center;
+        line-height: 16px;
+        order: 2;
+    }
+
+    .footer .footer_b .add .co {
+        padding: 16px 0 0 0;
+    }
+
+    .footer .footer_b .tel {
+        width: auto;
+        text-align: center;
+    }
+
+    .footer .footer_b .tel span {
+        margin: 0 0 16px 0;
+    }
+
+    .footer .footer_b .tel strong {
+        font-size: 24px;
+        margin: 0 0 16px 0;
+    }
+
+
+}
