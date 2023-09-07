@@ -139,7 +139,7 @@
         font-size: 14px;
     }
 
-    .footer .footer_t .sns {
+    .footer address .inner .footer_t .sns {
         display: flex;
         gap: 24px;
         padding: 0 0 0 0;
@@ -175,20 +175,23 @@
 
     .footer .footer_b .add {
         text-align: center;
+        font-size: 12px;
         line-height: 16px;
         order: 2;
     }
 
     .footer .footer_b .add .co {
+        font-size: 12px;
         padding: 16px 0 0 0;
     }
 
-    .footer .footer_b .tel {
+    .footer address .inner .footer_b .tel {
         width: auto;
         text-align: center;
     }
 
     .footer .footer_b .tel span {
+        font-size: 12px;
         margin: 0 0 16px 0;
     }
 
@@ -196,6 +199,5 @@
         font-size: 24px;
         margin: 0 0 16px 0;
     }
-
 
 }

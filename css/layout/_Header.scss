@@ -126,137 +126,80 @@
             }
         }
     }
+    &.on .gnb>ul>li>a {
+        display: block;
+        font-weight: 500;
+        line-height: 56px;
+        color: #555;
+    }
 }
 
 @include mobile {
     .header {
         height: 100px;
+    }
 
-        .header_t {
-            border-bottom: none;
+    .header .header_t {
+        border-bottom: none;
+    }
 
-            .gnb {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                visibility: hidden;
-                opacity: 0;
-                background: #f9f9f9;
-                height: 100vh;
-                width: 100%;
+    .header .gnb {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 999;
 
-                padding: 0;
-                transition: 0.5s;
+        background: #f9f9f9;
+        height: 100vh;
+        width: 100vw;
 
-                &>ul {
-                    flex-direction: column;
-                    gap: 0;
-                    padding: 140px 0 0 24px;
+        padding: 100px 24px;
+        transition: 0.5s;
+    }
 
-                    &>li {
-                        position: relative;
-                        width: 90%;
+    .header .gnb.on {
+        left: 0;
+    }
 
-                        &>a {
-                            line-height: 40px;
-                            color: #555;
-                        }
+    .header .gnb>ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0 0 0;
+    }
 
-                        .sub {
-                            position: static;
-                            width: 100%;
-                            display: none;
-                            transition: none;
-                            top: 0;
-                            left: 0;
-                            transform: translate(0, 0);
-                            text-align: left;
+    .header .gnb.on>ul {
+        content: "";
+        border-top: 1px solid #ddd;
+    }
 
-                            &>li {
-                                visibility: visible;
-                                height: 100%;
-                                width: 100%;
-                                border: none;
+    .header .gnb>ul>li:hover::before {
+        opacity: 0;
+        visibility: hidden;
+    }
 
-                                &>a {
-                                    display: block;
-                                    line-height: 40px;
-                                    font-size: 14px;
-                                    width: 100%;
-                                    padding-left: 15px;
-                                    border-top: 1px solid #eee;
-                                    border-left: 1px solid #eee;
-                                    border-right: 1px solid #eee;
-                                }
+    .header .gnb>ul>li>a {
+        line-height: 40px;
+    }
 
-                                &:hover {
-                                    background: inherit;
-                                }
-                            }
-                        }
+    .header .gnb li .sub {
+        position: static;
+        text-align: left;
 
-                        &:hover::before {
-                            display: none;
-                        }
+        width: auto;
+        transform: translate(0, 0);
+    }
 
-                        &:hover .sub>li {
-                            visibility: visible;
-                            height: 100%;
-                        }
-                    }
+    .header .gnb>li:hover .sub {
+        display: none;
+    }
 
-                    &>li~li {
-                        border-top: 1px solid #ddd;
-                    }
-                }
+    .header .gnb .sub a {
+        display: block;
+        line-height: 40px;
+        padding: 0 24px;
+    }
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 90px;
-                    left: 0;
-                    width: 100%;
-                    height: 1px;
-                    background: #ddd;
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 125px;
-                    left: 0;
-                    width: 100%;
-                    height: 1px;
-                    background: #ddd;
-                }
-
-                &.on {
-                    visibility: visible;
-                    opacity: 1;
-                    left: 0;
-                }
-            }
-
-            .login {
-                visibility: hidden;
-                opacity: 0;
-
-                &.on {
-                    visibility: visible;
-                    opacity: 1;
-                    position: absolute;
-                    top: 100px;
-                    left: 24px;
-                    color: #555;
-                }
-            }
-        }
-
-        &.on .gnb>ul>li>a {
-            display: block;
-            font-weight: 500;
-            line-height: 56px;
-            color: #555;
-        }
+    .header .login {
+        display: none;
     }
 }
