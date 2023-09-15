@@ -60,6 +60,7 @@
         bottom: 140px;
         right: -100%;
         transition: 0.5s;
+        z-index: 999;
 
         .chat_wrap {
             width: 300px;
@@ -217,6 +218,10 @@
 
 @include mobile {
     .btn_ham {
+        top: 30px;
+        right: 15px;
+        z-index: 1000;
+        cursor: pointer;
         position: fixed;
         display: block;
     }
@@ -225,43 +230,45 @@
         position: fixed;
         bottom: 70px;
         right: 8px;
+
+        .to_top {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            margin-top: 10px;
+
+            i {
+                display: block;
+                font-size: 12px;
+                margin: 0 0 0 0;
+                padding: 4px 0 0 0;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        .chat_bot {
+            width: 40px;
+            height: 40px;
+
+            .img_box {
+                line-height: 35px;
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+
+        .chat_bot_con {
+            bottom: -60px;
+        }
+
+        &.on .chat_bot_con {
+            right: 50px;
+        }
     }
 
-    .btn_side .to_top {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        margin-top: 10px;
-    }
-
-    .btn_side .to_top i {
-        display: block;
-        font-size: 12px;
-        margin: 0 0 0 0;
-        padding: 4px 0 0 0;
-    }
-
-    .btn_side .to_top span {
-        font-size: 12px;
-    }
-
-    .btn_side .chat_bot {
-        width: 40px;
-        height: 40px;
-    }
-    .btn_side .chat_bot .img_box {
-        line-height: 35px;
-    }
-    
-    .btn_side .chat_bot .img_box img {
-        width: 30px;
-    }
-    
-    .btn_side .chat_bot_con {
-        bottom: -60px;
-    }
-    
-    .btn_side.on .chat_bot_con {
-        right: 50px;
-    }
 }

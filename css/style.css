@@ -201,7 +201,7 @@ button {
   .header .header_t {
     border-bottom: none;
   }
-  .header .gnb {
+  .header .header_b .gnb {
     position: fixed;
     top: 0;
     left: -100%;
@@ -212,40 +212,40 @@ button {
     padding: 100px 24px;
     transition: 0.5s;
   }
-  .header .gnb.on {
-    left: 0;
-  }
-  .header .gnb > ul {
+  .header .header_b .gnb ul {
     flex-direction: column;
     gap: 0;
     padding: 20px 0 0 0;
   }
-  .header .gnb.on > ul {
-    content: "";
-    border-top: 1px solid #ddd;
-  }
-  .header .gnb > ul > li:hover::before {
+  .header .header_b .gnb ul li:hover::before {
     opacity: 0;
     visibility: hidden;
   }
-  .header .gnb > ul > li > a {
+  .header .header_b .gnb ul li a {
     line-height: 40px;
   }
-  .header .gnb li .sub {
+  .header .header_b .gnb ul li .sub {
     position: static;
     text-align: left;
     width: auto;
     transform: translate(0, 0);
   }
-  .header .gnb > li:hover .sub {
-    display: none;
-  }
-  .header .gnb .sub a {
+  .header .header_b .gnb ul li .sub a {
     display: block;
     line-height: 40px;
     padding: 0 24px;
   }
-  .header .login {
+  .header .header_b .gnb ul li:hover .sub {
+    display: none;
+  }
+  .header .header_b .gnb.on {
+    left: 0;
+  }
+  .header .header_b .gnb.on > ul {
+    content: "";
+    border-top: 1px solid #ddd;
+  }
+  .header .header_b .login {
     display: none;
   }
 }
@@ -967,6 +967,7 @@ button {
   bottom: 140px;
   right: -100%;
   transition: 0.5s;
+  z-index: 999;
 }
 .btn_side .chat_bot_con .chat_wrap {
   width: 300px;
@@ -1096,6 +1097,10 @@ button {
 
 @media (max-width: 768px) {
   .btn_ham {
+    top: 30px;
+    right: 15px;
+    z-index: 1000;
+    cursor: pointer;
     position: fixed;
     display: block;
   }
@@ -1137,6 +1142,7 @@ button {
   }
 }
 .sub_box {
+  overflow: hidden;
   padding: 40px 0 0 0;
 }
 .sub_box .sub_vi {
@@ -1157,6 +1163,9 @@ button {
   font-weight: 700;
   line-height: 1.4;
   margin: 0 0 8px 0;
+}
+.sub_box .company {
+  background: #f9f9f9;
 }
 .sub_box .company .company_wrap {
   display: flex;
@@ -1197,6 +1206,7 @@ button {
   padding: 15px 30px;
   font-size: 18px;
   font-weight: 500;
+  border-radius: 8px;
   background: #dde6d7;
 }
 .sub_box .company .company_wrap .right li ~ li {
@@ -1284,4 +1294,166 @@ button {
 .sub_box .banner .txt_box h3 {
   font-size: 40px;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .sub_box {
+    overflow: hidden;
+    padding: 30px 0 0 0;
+  }
+  .sub_box .sub_vi {
+    position: relative;
+    height: 240px;
+    background: url(../../images/sub01_bg01.jpg) no-repeat center center/cover;
+  }
+  .sub_box .sub_vi .tit {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(24px, -50%);
+    text-align: left;
+    color: #fff;
+  }
+  .sub_box .sub_vi .tit h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+  }
+  .sub_box .company {
+    background: #f9f9f9;
+  }
+  .sub_box .company .company_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .sub_box .company .company_wrap .left {
+    flex: 2;
+  }
+  .sub_box .company .company_wrap .left h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+  }
+  .sub_box .company .company_wrap .left p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .sub_box .company .company_wrap .left p span {
+    position: relative;
+  }
+  .sub_box .company .company_wrap .left p span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 24px;
+    background: #dde6d7;
+    z-index: -1;
+  }
+  .sub_box .company .company_wrap .right {
+    flex: 1;
+    text-align: center;
+  }
+  .sub_box .company .company_wrap .right li {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    background: #dde6d7;
+  }
+  .sub_box .company .company_wrap .right li ~ li {
+    margin-top: 10px;
+  }
+  .sub_box .special .tit h2 {
+    font-size: 24px;
+  }
+  .sub_box .special ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .sub_box .special ul li > * {
+    flex: 1;
+  }
+  .sub_box .special ul li .img_box {
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .sub_box .special ul li .txt_box {
+    padding: 24px 0 0 0;
+  }
+  .sub_box .special ul li .txt_box strong {
+    display: block;
+    position: relative;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 44px 0;
+  }
+  .sub_box .special ul li .txt_box strong::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+  }
+  .sub_box .special ul li .txt_box strong span {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    margin: 0 10px 0 8px;
+    color: #fff;
+  }
+  .sub_box .special ul li .txt_box strong span::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -7px;
+    width: 24px;
+    height: 24px;
+    background: #444;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .sub_box .special ul li .txt_box p {
+    font-size: 16px;
+    color: #666;
+  }
+  .sub_box .special ul li .txt_box p span {
+    display: block;
+    margin: 0 0 15px 0;
+  }
+  .sub_box .special ul li ~ li {
+    margin: 30px 0 0 0;
+  }
+  .sub_box .banner {
+    position: relative;
+    height: 400px;
+    background: url(../../images/sub01_bg02.jpg) no-repeat center center/cover;
+  }
+  .sub_box .banner .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(24px, -50%);
+    text-align: left;
+    color: #fff;
+  }
+  .sub_box .banner .txt_box strong {
+    display: block;
+    font-size: 16px;
+    margin: 0 0 12px 0;
+  }
+  .sub_box .banner .txt_box h3 {
+    font-size: 32px;
+    font-weight: 700;
+  }
 }/*# sourceMappingURL=style.css.map */

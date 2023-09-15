@@ -1,4 +1,5 @@
 .sub_box {
+    overflow: hidden;
     padding: 40px 0 0 0;
 
     .sub_vi {
@@ -21,6 +22,7 @@
     }
 
     .company {
+        background: #f9f9f9;
         .company_wrap {
             display: flex;
             justify-content: space-between;
@@ -63,6 +65,7 @@
                     padding: 15px 30px;
                     font-size: 18px;
                     font-weight: 500;
+                    border-radius: 8px;
                     background: #dde6d7;
                 }
 
@@ -172,4 +175,199 @@
             }
         }
     }
+}
+
+@media (max-width:768px) {
+    .sub_box {
+        overflow: hidden;
+        padding: 30px 0 0 0;
+    
+        .sub_vi {
+            position: relative;
+            height: 240px;
+            background: url(../../images/sub01_bg01.jpg)no-repeat center center/cover;
+    
+            .tit {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(24px, -50%);
+                text-align: left;
+                color: #fff;
+    
+                h2 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1.4;
+                    margin: 0 0 8px 0;
+                }
+            }
+        }
+    
+        .company {
+            background: #f9f9f9;
+            .company_wrap {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 30px;
+    
+                .left {
+                    flex: 2;
+                    h3 {
+                        font-size: 24px;
+                        font-weight: 700;
+                        margin: 0 0 24px 0;
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 30px;
+    
+                        span {
+                            position: relative;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 100%;
+                                height: 24px;
+                                background: #dde6d7;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                    
+                }
+    
+                .right {
+                    flex: 1;
+                    text-align: center;
+    
+                    li {
+                        padding: 15px 30px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        border-radius: 8px;
+                        background: #dde6d7;
+                    }
+    
+                    li~li {
+                        margin-top: 10px;
+                    }
+                }
+    
+            }
+        }
+    
+        .special {
+            .tit {
+                h2 {
+                    font-size: 24px;
+                }
+            }
+            ul {
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                    justify-content: space-between;
+    
+                    &>* {
+                        flex: 1;
+                    }
+    
+                    .img_box {
+                        height: 300px;
+                        border-radius: 15px;
+                        overflow: hidden;
+                    }
+    
+                    .txt_box {
+                        padding: 24px 0 0 0;
+
+                        strong {
+                            display: block;
+                            position: relative;
+                            font-weight: 700;
+                            font-size: 18px;
+                            margin: 0 0 44px 0;
+    
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -20px;
+                                left: 0;
+                                width: 100%;
+                                height: 1px;
+                                background: #eee;
+                            }
+    
+                            span {
+                                display: inline-block;
+                                position: relative;
+                                font-size: 18px;
+                                margin: 0 10px 0 8px;
+                                color: #fff;
+    
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: -3px;
+                                    left: -7px;
+                                    width: 24px;
+                                    height: 24px;
+                                    background: #444;
+                                    border-radius: 50%;
+                                    z-index: -1;
+                                }
+                            }
+                        }
+    
+                        p {
+                            font-size: 16px;
+                            color: #666;
+    
+                            span {
+                                display: block;
+                                margin: 0 0 15px 0;
+                            }
+                        }
+                    }
+                }
+    
+                li~li {
+                    margin: 30px 0 0 0;
+                }
+            }
+        }
+    
+        .banner {
+            position: relative;
+            height: 400px;
+            background: url(../../images/sub01_bg02.jpg)no-repeat center center/cover;
+    
+            .txt_box {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(24px, -50%);
+                text-align: left;
+                color: #fff;
+    
+                strong {
+                    display: block;
+                    font-size: 16px;
+                    margin: 0 0 12px 0;
+                }
+    
+                h3 {
+                    font-size: 32px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    
 }
